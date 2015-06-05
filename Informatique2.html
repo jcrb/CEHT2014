@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CEHT et Informatique</title>
+  <meta charset="utf-8">
+  <meta name="description" content="CEHT et Informatique">
+  <meta name="author" content="Dr J.C. Bartier - jeanclaude.bartier@gmail.com">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <aside class="gdbar">
+    <img src="assets/img/476px-Modèle-client-serveur.svg.png">
+  </aside>
+  <hgroup class="auto-fadein">
+    <h1>CEHT et Informatique</h1>
+    <h2>Notions d'informatique utiles aux ARM</h2>
+    <p>Dr J.C. Bartier - jeanclaude.bartier@gmail.com<br/>cours CEHT</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="class1" id="id1" style="background:yellow;">
+  <hgroup>
+    <h2>PLAN</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>notion de réseaux</li>
+<li>Le réseau internet</li>
+<li>Protocoles de communications</li>
+<li>Notion d&#39;adresse</li>
+<li>Architechture client-serveur</li>
+<li>Sécurité informatique et cryptage</li>
+</ol>
+
+<p>Un bon outil <a href="https://fr.wikipedia.org/">wikipedia</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>Réseau informatique</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><a href="http://fr.wikipedia.org/wiki/R%C3%A9seau_informatique">wikipedia</a></p>
+
+<p>En informatique, un <strong>réseau informatique</strong> est </p>
+
+<ul>
+<li>un ensemble d&#39;appareils électroniques (ordinateurs, ...), </li>
+<li>géographiquement éloignés les uns des autres, </li>
+<li>interconnectés par des télécommunications, généralement permanentes, </li>
+<li>qui permettent d&#39;échanger des informations entre eux.</li>
+</ul>
+
+<p>Le réseau le plus connu s&#39;appelle <strong>internet</strong>.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Réseau internet</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Expérimenté entre 1969 et 1971 puis devenu opérationnel à partir de 1983</li>
+<li>Celui-ci est issu de l&#39;<strong>interconnexion</strong> à l&#39;échelle mondiale de réseaux régionaux et locaux (<strong>extranet</strong>, <strong>intranet</strong>). </li>
+<li>Il constitue ainsi un réseau de réseaux. </li>
+<li>un réseau est le support de la <strong>communication</strong></li>
+<li>communiquer c&#39;est <em>échanger</em> des <em>informations</em></li>
+<li>pour échanger il faut un <b>protocole</b> basé sur des <em>normes</em>.</li>
+<li>le respect des normes caractérise l&#39;interopérabilité</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Protocoles de communication</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><B>Communiquer</b> consiste à transmettre des <b>informations</b>, mais tant que les interlocuteurs ne lui ont pas attribué un sens, il ne s&#39;agit que de données et pas d&#39;information.</p>
+
+<p>Les interlocuteurs doivent donc:</p>
+
+<ul>
+<li>non seulement parler un langage commun<br></li>
+<li>mais aussi maîtriser des règles minimales d&#39;émission et de réception des données. </li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-5" style="background:;">
+  <hgroup>
+    <h2>Protocoles (exemple)</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>C&#39;est le rôle d&#39;un protocole de s&#39;assurer de tout cela. Par exemple, dans le cas d&#39;un appel téléphonique :</p>
+
+<pre><code>l&#39;interlocuteur apprend que vous avez quelque chose à transmettre 
+(vous composez son numéro pour faire sonner son combiné) ;
+il indique qu&#39;il est prêt à recevoir 
+(vous attendez qu&#39;il décroche et dise « Allo ») ;
+il situe votre communication dans son contexte 
+(« Je suis Marc. Je t&#39;appelle pour la raison suivante... ») ;
+un éventuel destinataire final peut y être identifié 
+(« Peux-tu prévenir Michel que... ») ;
+le correspondant s&#39;assure d&#39;avoir bien compris le message 
+(« Peux-tu me répéter le nom ? ») ;
+les procédures d&#39;anomalies sont mises en place 
+(« Je te rappelle si je n&#39;arrive pas à le joindre ») ;
+les interlocuteurs se mettent d&#39;accord sur la fin de la communication 
+(« Merci de m&#39;avoir prévenu »).
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-6" style="background:;">
+  <article data-timings="">
+    <p>Le protocole le plus ancien et le plus connu en informatiques est le protocole TCP/IP (Transmission Control Protocol/Internet Protocol)</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-7" style="background:;">
+  <hgroup>
+    <h2>Internet</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Internet est le réseau informatique mondial accessible au public. </li>
+<li>C&#39;est un réseau de réseaux, sans centre névralgique, composé de millions de réseaux aussi bien publics que privés, universitaires, commerciaux et gouvernementaux. </li>
+<li>L&#39;information est transmise par Internet grâce à un ensemble standardisé de protocoles de transfert de données, qui permet l&#39;élaboration d&#39;applications et de services variés comme le 
+
+<ul>
+<li>courrier électronique,</li>
+<li>la messagerie instantanée, </li>
+<li>le (peer to peer (pair-à-pair) et le World Wide Web.</li>
+</ul></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-8" style="background:;">
+  <hgroup>
+    <h2>Accéder à internet</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>L&#39;accès à Internet peut être obtenu grâce à un <b>fournisseur d&#39;accès</b> à Internet via divers moyens de communication électronique : </p>
+
+<ul>
+<li><p>soit filaire</p>
+
+<ul>
+<li>réseau téléphonique commuté (bas débit), </li>
+<li>ADSL,</li>
+<li>fibre optique</li>
+</ul></li>
+<li><p>soit sans fil (WiMAX, par satellite, 3-5 G+). </p></li>
+</ul>
+
+<p>Un utilisateur d&#39;Internet est désigné par le néologisme « internaute ».</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-9" style="background:;">
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='PLAN'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Réseau informatique'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Réseau internet'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Protocoles de communication'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='Protocoles (exemple)'>
+         5
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title=''>
+         6
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=7 title='Internet'>
+         7
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=8 title='Accéder à internet'>
+         8
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=9 title=''>
+         9
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
